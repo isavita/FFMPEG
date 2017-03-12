@@ -1,0 +1,13 @@
+<%= link_to 'Download Video', video_download_streams_path %>
+</br>
+<%= form_tag(message_streams_path, method: 'post', html: { class: 'form-vertical' }) do %>
+  <%= hidden_field_tag(:media_id, 1)%>
+  <%= label_tag 'Message' %>
+  </br>
+  <%= text_area_tag 'message', @message %>
+  </br>
+  <%= submit_tag 'Save' %>
+<% end %>
+<div id="messages" data-url="<%= streams_url %>" data-videos="<%=raw Video.limit(10).to_json %>">
+  
+</div>

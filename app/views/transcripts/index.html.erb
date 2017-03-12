@@ -1,0 +1,19 @@
+<table>
+  <thead>
+    <caption>Transcripts</caption>
+    <tr>
+      <th>Name</th>
+      <th>Content</th>
+      <th>Language</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= @transcripts.find_each do |transcript| %>
+      <tr>
+        <td><%= transcript.name %></td>
+        <td><%= transcript.content %></td>
+        <td><%= transcript.language %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

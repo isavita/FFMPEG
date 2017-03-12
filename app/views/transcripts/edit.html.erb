@@ -1,0 +1,12 @@
+<%= button_tag 'Undo', id: 'btn-undo', data: { url: transcript_undo_transcript_path(@transcript) } %>
+<%= button_tag 'Redo', id: 'btn-redo', data: { url: transcript_redo_transcript_path(@transcript) } %>
+
+<%= form_for @transcript, url: transcript_update_transcript_ajax_path(@transcript) do |f| %>
+  <%= f.text_field :name %>
+  </br>
+  <%= f.text_area :content %>
+  </br>
+  <%= f.text_field :language %>
+  </br>
+  <%= f.submit 'Save' %>
+<% end %>
